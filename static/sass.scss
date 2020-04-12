@@ -1,0 +1,36 @@
+$font:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif; 
+
+.display-name{
+    display: inline-block;
+    position: relative;
+    top: 10pc;
+    font-family: $font;
+    padding: 2%;
+    border-radius: 0.2rem;
+    border:dashed 5px hsla(0, 95%, 35%, 1);
+    h1{
+        font-size: 60px;
+    }
+    label{
+        font-size: 20px;
+        display: block;
+    }
+    input[type=text]
+    {   
+        box-sizing: border-box;
+        font-size: 20px;
+        margin: 5% 0;
+        padding: 3%;
+        border-radius: 0.2rem;
+        border: solid 1px hsla(48, 100%, 50%, 1);
+    }
+    button
+    {
+        box-sizing: border-box;
+        font-size: 15px;
+        margin: 5% 0;
+        padding: 3%;
+        border-radius: 0.2rem;
+        border: solid 1px hsla(48, 100%, 50%, 1);
+    }
+}

@@ -1,0 +1,29 @@
+.display-name {
+  display: inline-block;
+  position: relative;
+  top: 10pc;
+  font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+  padding: 2%;
+  border-radius: 0.2rem;
+  border: dashed 5px #ae0404; }
+  .display-name h1 {
+    font-size: 60px; }
+  .display-name label {
+    font-size: 20px;
+    display: block; }
+  .display-name input[type=text] {
+    box-sizing: border-box;
+    font-size: 20px;
+    margin: 5% 0;
+    padding: 3%;
+    border-radius: 0.2rem;
+    border: solid 1px #ffcc00; }
+  .display-name button {
+    box-sizing: border-box;
+    font-size: 15px;
+    margin: 5% 0;
+    padding: 3%;
+    border-radius: 0.2rem;
+    border: solid 1px #ffcc00; }
+
+/*# sourceMappingURL=sass.css.map */
