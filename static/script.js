@@ -1,34 +1,38 @@
 var display_name = [];
+
 document.addEventListener('DOMContentLoaded', () =>{
-    
+    var okay_button = document.querySelector('#name');
+    var name = document.querySelector(".name");
     // Connect to websocket
     //var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
-    document.querySelector(".submit").onclick = () =>{
-        let name = document.querySelector(".name").value;
-        display_name.push(name);
     
-    /*document.querySelector("#form1").onsubmit = () => {
-        let name = document.querySelector(".name").value;
-        display_name.push(name);*/
-        /*if (localStorage.getItem("name") == name){
-            alert("Name exists");
+    // By default, submit button is disabled
+    okay_button.disabled = true;
+
+    // Enable button if there is some text in input field 
+    name.onkeyup = function(e){
+        // If spaces are given
+        if ( e.which === 32 ){
+            return false;
         }
         else{
-            display_name.push(name);
-            localStorage.setItem("name", name);
-        }*/
-        /*
-        for (let i = 0; i < display_name.length; i++ ){
-            if ( name === display_name[i] ){
-                alert("Name exists");
-                break;
+            if ( name.value.length > 0 ){
+                okay_button.disabled = false;
+    
+                // Now if button is clicked
+                okay_button.onclick = () => {
+                    display_name.push(name.value);
+                    localStorage.setItem("name", name.value);
+                    name.value = "";
+                    okay_button.disabled = true;
+                }
             }
             else{
-                display_name.push(name);
-                localStorage.setItem("name", name);
-                break;
+                okay_button.disabled = true;
             }
-        };*/
-    };
+        }
+        
+    }
+    //start by loading the index page 
 
 });

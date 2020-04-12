@@ -8,15 +8,6 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="display-name">
-                <form action="" method="POST" id="form1">
-                    <h1>Flack</h1>
-                    <label>Display name</label>
-                    <input type="text" class="name" placeholder="Enter your display name" name="display-name">
-                    <button class="submit">Okay</button>
-                    <!--<text> ERROR -->
-                </form>
-            </div>
             <nav class="nav-left">
                 <div class="info">
                     <h3>Name</h3>
@@ -31,6 +22,7 @@
                     <h3>Create Channel</h3>
                 </div>
             </nav>
+            {% block content %} {% endblock %}
         </div>
     </body>
 </html>

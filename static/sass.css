@@ -1,7 +1,6 @@
 .display-name {
   display: inline-block;
   position: relative;
-  top: 10pc;
   font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
   padding: 2%;
   border-radius: 0.2rem;
