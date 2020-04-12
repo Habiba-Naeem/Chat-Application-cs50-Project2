@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for, jsonify
 from flask_socketio import SocketIO, emit
 
 app = Flask(__name__)
@@ -9,28 +9,24 @@ socketio = SocketIO(app)
 
 display_name = []
 
-@app.route("/", methods=["POST","GET"])
+@app.route("/")
 def index():
-
-    if request.method == "POST":
-        name_exists = False
-        for i in range(len(display_name)):
-
-            if request.form.get("display-name") == display_name[i]:
-                name_exists = True
-            else:
-                name_exists = False    
-        
-        if name_exists == False:
-            display_name.append(request.form.get("display-name"))
-            
-            return redirect(url_for("main"))
-
+    #return redirect(url_for("main"))
     return render_template("index.html")
 
-@app.route("/main", methods=["POST","GET"])
-def main():
-    return render_template("index.html", name_exists = True )
+@app.route("/sign", methods=["POST"])
+def sign():
+
+    name = request.form.get("name")
+    
+    if name not in display_name:
+        display_name.append(name)
+        print(*display_name, sep='\n')
+        return jsonify({"success":True} )
+    
+    else:
+        print(*display_name, sep='\n')
+        return jsonify({"success":False})    
 
 if __name__ == '__main__':
     app.run(debug=True)

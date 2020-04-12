@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     var okay_button = document.querySelector('#name');
     var name = document.querySelector(".name");
     
-    
     // Connect to websocket
     //var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
     
@@ -24,9 +23,37 @@ document.addEventListener('DOMContentLoaded', () =>{
     
                 // Now if button is clicked
                 okay_button.onclick = () => {
-                    localStorage.setItem("name", name.value);
-                    name.value = "";
                     okay_button.disabled = true;
+
+                    // Initialise a new request
+                    const request = new XMLHttpRequest();
+                    request.open('POST', '/sign');
+
+                    request.onload = () => {
+                        
+                        // Extract JSON data from request
+                        const data = JSON.parse(request.responseText);
+
+                        if (data.success){
+                            localStorage.setItem("name", name.value);
+                        }
+                        else{
+                            alert("Please choose another display name")
+                        }
+                    }
+
+                    //document.querySelector("display-name").style.visibility = "hidden"
+                    document.getElementById("display-name").style.visibility = "hidden"
+                    document.getElementById("nav-left").style.visibility = "visible"
+                    // Data to send with request
+                    const data = new FormData();
+                    data.append('name', name.value);
+
+                    // Send request
+                    request.send(data);
+                    return false;
+
+                    
                 }
             }
             else{
@@ -34,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () =>{
             }
         }   
     }
+
 
 
     //start by loading the index page 
