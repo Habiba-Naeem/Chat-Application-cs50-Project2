@@ -1,31 +1,35 @@
 .display-name {
   display: inline-block;
   font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+  position: relative;
+  top: 5pc;
   padding: 2%;
   border-radius: 0.2rem;
-  border: dashed 5px #ae0404; }
+  border: dashed 5px #98dacb; }
   .display-name h1 {
     font-size: 60px; }
   .display-name label {
     font-size: 20px;
     display: block; }
   .display-name input[type=text] {
+    position: static;
     box-sizing: border-box;
     font-size: 20px;
     margin: 5% 0;
     padding: 3%;
     border-radius: 0.2rem;
-    border: solid 1px #ffcc00; }
+    border: solid 1px #ae0404; }
   .display-name button {
+    position: static;
     box-sizing: border-box;
     font-size: 15px;
     margin: 5% 0;
     padding: 3%;
     border-radius: 0.2rem;
-    border: solid 1px #ffcc00; }
+    border: solid 1px #ae0404; }
 
 .nav-left {
-  background-color: lawngreen;
+  background-color: #d6f7f4;
   text-align: left;
   font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
   display: inline-block;
@@ -43,7 +47,56 @@
   .nav-left a {
     text-decoration: inherit;
     color: inherit;
-    background-color: khaki;
     display: block; }
+  .nav-left button {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+    padding: 1%;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: transparent; }
+
+.content {
+  display: inline-block;
+  font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
+  position: fixed;
+  right: 0%;
+  width: 80vw;
+  height: 100vh; }
+  .content fieldset {
+    height: 90%;
+    border: none; }
+  .content legend {
+    font-size: 40px; }
+  .content li {
+    list-style: none; }
+  .content .all-messages {
+    height: 80vh;
+    overflow-y: scroll; }
+  .content #messages-div {
+    margin: 3%;
+    border: solid 1px #98dacb;
+    border-left: none;
+    border-right: none; }
+  .content span {
+    font-size: 12px; }
+  .content #send-message-div {
+    position: fixed;
+    bottom: 5%;
+    width: 80%; }
+  .content #message {
+    font-size: 20px;
+    padding: 1%;
+    width: 60%;
+    border-radius: 0.2rem;
+    border: solid 1px #ae0404; }
+  .content button {
+    font-size: 20px;
+    padding: 1%;
+    border-radius: 0.2rem;
+    border: solid 1px #ae0404; }
+
+#friend-list {
+  cursor: pointer; }
 
 /*# sourceMappingURL=sass.css.map */

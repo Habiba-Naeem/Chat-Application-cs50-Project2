@@ -2,11 +2,12 @@ $font:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
 
 .display-name{
     display: inline-block;
-    
     font-family: $font;
+    position: relative;
+    top: 5pc;
     padding: 2%;
     border-radius: 0.2rem;
-    border:dashed 5px hsla(0, 95%, 35%, 1);
+    border:dashed 5px rgb(152, 218, 203);
     h1{
         font-size: 60px;
     }
@@ -16,26 +17,28 @@ $font:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     }
     input[type=text]
     {   
+        position: static;
         box-sizing: border-box;
         font-size: 20px;
         margin: 5% 0;
         padding: 3%;
         border-radius: 0.2rem;
-        border: solid 1px hsla(48, 100%, 50%, 1);
+        border: solid 1px hsla(0, 95%, 35%, 1);
     }
     button
     {
+        position: static;
         box-sizing: border-box;
         font-size: 15px;
         margin: 5% 0;
         padding: 3%;
         border-radius: 0.2rem;
-        border: solid 1px hsla(48, 100%, 50%, 1);
+        border: solid 1px hsla(0, 95%, 35%, 1);
     }
 }
 
 .nav-left{
-    background-color: lawngreen;
+    background-color: rgb(214, 247, 244);
     text-align: left;
     font-family: $font;
     display: inline-block;
@@ -55,7 +58,67 @@ $font:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     a{
        text-decoration: inherit;
        color: inherit;
-       background-color: khaki;
        display: block;
     }
+    button
+    {   font-family: $font;
+        padding: 1%;
+        border:none;
+        font-size: 20px;
+        font-weight: 600;
+        background-color: transparent;
+    }
+}
+
+.content{
+    display: inline-block;
+    font-family: $font;
+    position: fixed;
+    right: 0%;
+    width: 80vw;
+    height: 100vh;
+    fieldset{
+        height: 90%;
+        border: none;
+    }
+    legend{
+        font-size: 40px;
+    }
+    li{
+        list-style: none;
+    }
+    .all-messages{
+        height: 80vh;
+        overflow-y: scroll;
+    }
+    #messages-div{
+        margin: 3%;
+        border: solid 1px rgb(152, 218, 203);
+        border-left:none;
+        border-right:none;
+    }
+    span{
+        font-size: 12px;
+    }
+    #send-message-div{
+        position: fixed;
+        bottom: 5%;
+        width: 80%;
+    }
+    #message{
+        font-size: 20px;
+        padding: 1%;
+        width: 60%;
+        border-radius: 0.2rem;
+        border: solid 1px hsla(0, 95%, 35%, 1);
+    }
+    button{
+        font-size: 20px;
+        padding: 1%;
+        border-radius: 0.2rem;
+        border: solid 1px hsla(0, 95%, 35%, 1);
+    }
+}
+#friend-list{
+    cursor: pointer;
 }

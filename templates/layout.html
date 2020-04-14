@@ -15,14 +15,25 @@
                 <div class="info">
                     <h3>Name</h3>
                 </div>
+                <button type="button" class="nav-button" id="friend-list" >Friends</button>
                 <div class="info">
-                    <h3><a href="">Friends</a></h3>
+                    <ul>
+                        <li> <a href="">Friend 1</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="nav-button" id="channel-list">Channel List</button>
+                <div class="info">
+                    <ul>
+                        <li> <a href="">Channel 1</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="nav-button" id="create-channel">Create Channel</button>
+                <div class="info">
+                    <input type="text" autocomplete="off" placeholder="Channel name">
+                    <button type="button">Create</button>
                 </div>
                 <div class="info">
-                    <h3><a href="">Channel List</a></h3>
-                </div>
-                <div class="info">
-                    <h3><a href="">Create Channel</a></h3>
+                    <button type="button" id="logout"  onclick="window.location.replace('/logout')">Log Out</button>
                 </div>
             </nav>
             {% block content %} {% endblock %}
