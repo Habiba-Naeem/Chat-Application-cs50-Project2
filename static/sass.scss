@@ -60,17 +60,32 @@ $font:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
        color: inherit;
        display: block;
     }
-    button
+    .nav-button, #logout
     {   font-family: $font;
         padding: 1%;
         border:none;
         font-size: 20px;
-        font-weight: 600;
         background-color: transparent;
+        &:hover{
+            cursor: pointer;
+            font-weight: 900;
+        }
+    }
+    input[type=text]{
+        display: none;
+    }
+    #create{
+        display: none;
     }
 }
 
+li{
+    list-style: none;
+    display: none;
+}
+
 .content{
+
     display: inline-block;
     font-family: $font;
     position: fixed;
@@ -80,6 +95,7 @@ $font:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     fieldset{
         height: 90%;
         border: none;
+        display: none;
     }
     legend{
         font-size: 40px;
@@ -118,7 +134,4 @@ $font:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
         border-radius: 0.2rem;
         border: solid 1px hsla(0, 95%, 35%, 1);
     }
-}
-#friend-list{
-    cursor: pointer;
 }

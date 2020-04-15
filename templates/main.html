@@ -3,7 +3,7 @@
 {% block content %}
 <div class="content">
     <fieldset id="text">
-        <legend>Channel Name or friend name</legend>
+        <legend>{{ channel_name}}}</legend>
         <div class="all-messages">
             <div id="messages-div">
                 <p>Message1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, at aliquid cupiditate quos ratione nemo nihil corporis inventore hic minus, repudiandae labore qui, facere odio eum minima ipsam reiciendis ut?</p>
@@ -16,7 +16,7 @@
                 <span>-Aliya</span>
             </div>
             <div id="messages-div">
-                <p>Message3 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia exercitationem quod sapiente itaque necessitatibus. Eum placeat aut ullam totam sint aliquid earum, aspernatur omnis. Vitae nulla ratione nisi velit praesentium?</p>
+                <p>Message3 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia exercitationem quod sapiente itaque necessitatibus. Eum placeat aut ullam totam sint aliquid earum, aspernatur omnis. Vitae nulla ratione nisi velit praesentium? </p>
                 <span>14:00</span>
                 <span>-Naeem</span>
             </div>
@@ -31,5 +31,6 @@
             <button type="button">Send</button>
         </div>
     </fieldset>
+    <h1 id="heading">Hi, {{ username }}! Please join or create a new channel!</h1>
 </div>
 {% endblock%}

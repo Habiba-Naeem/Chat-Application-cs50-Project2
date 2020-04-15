@@ -12,6 +12,7 @@ Session(app)
 socketio = SocketIO(app)
 
 user_list = []
+channel_list = []
 
 @app.route("/")
 def index():
@@ -47,7 +48,27 @@ def sign():
 
 @app.route("/user/<username>", methods=["GET", "POST"])
 def main(username):
-    return render_template("main.html")
+    return render_template("main.html", username = username)
+
+@app.route("/create-channel", methods=["POST"])
+def create_channel():
+    channel_name = request.form.get("channel-name")
+
+    if channel_name not in channel_list:
+        channel_list.append(channel_name)
+        session["channel_name"] = channel_name
+        print("Session: " , session["channel_name"])
+        print(*channel_list, sep='\n')
+        return jsonify({"success":True} )
+    
+    else:
+        print(*channel_list, sep='\n')
+        return jsonify({"success":False})
+
+@app.route("/user/<username>/<channel_name>", methods=["GET", "POST"])
+def main_channel(username, channel_name):
+    return render_template("main.html", username = username, channel_name = channel_name)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

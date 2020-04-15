@@ -12,9 +12,7 @@
                 <div class="info">
                     <h1>Flack</h1>
                 </div>
-                <div class="info">
-                    <h3>Name</h3>
-                </div>
+                <h3>{{ username }}</h3>
                 <button type="button" class="nav-button" id="friend-list" >Friends</button>
                 <div class="info">
                     <ul>
@@ -29,8 +27,8 @@
                 </div>
                 <button type="button" class="nav-button" id="create-channel">Create Channel</button>
                 <div class="info">
-                    <input type="text" autocomplete="off" placeholder="Channel name">
-                    <button type="button">Create</button>
+                    <input type="text" autocomplete="off" placeholder="Channel name" name="channel-name" id="channel_input">
+                    <button type="button" id="create">Create</button>
                 </div>
                 <div class="info">
                     <button type="button" id="logout"  onclick="window.location.replace('/logout')">Log Out</button>
