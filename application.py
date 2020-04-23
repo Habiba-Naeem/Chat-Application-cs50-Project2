@@ -30,45 +30,51 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route("/sign", methods=["POST"])
+@app.route("/sign", methods=["POST", "GET"])
 def sign():
-
     username = request.form.get("username")
     
-    if username not in user_list:
-        user_list.append(username)
-        session["username"] = username
-        print("Session: " , session["username"])
-        print(*user_list, sep='\n')
-        return jsonify({"success":True} )
-    
-    else:
-        print(*user_list, sep='\n')
-        return jsonify({"success":False})    
+    if request.method == "POST":
+        if username not in user_list:
+            user_list.append(username)
+            session["username"] = username
+            print("Session: " , session["username"])
+            print(*user_list, sep='\n')
+            return jsonify({"success":True})
+            #return redirect(url_for('main', username = username ))
+        else:
+            print(*user_list, sep='\n')
+            return jsonify({"success":False})
 
-@app.route("/user/<username>", methods=["GET", "POST"])
+@app.route("/user/<string:username>")
 def main(username):
     return render_template("main.html", username = username)
 
 @app.route("/create-channel", methods=["POST"])
 def create_channel():
     channel_name = request.form.get("channel-name")
-
-    if channel_name not in channel_list:
-        channel_list.append(channel_name)
-        session["channel_name"] = channel_name
-        print("Session: " , session["channel_name"])
-        print(*channel_list, sep='\n')
-        return jsonify({"success":True} )
-    
-    else:
-        print(*channel_list, sep='\n')
-        return jsonify({"success":False})
+    if request.method == "POST":
+        if channel_name not in channel_list:
+            channel_list.append(channel_name)
+            session["channel_name"] = channel_name
+            print("Session: " , session["channel_name"])
+            print(*channel_list, sep='\n')
+            return jsonify({"success":True} )
+        
+        else:
+            print(*channel_list, sep='\n')
+            return jsonify({"success":False})
 
 @app.route("/user/<username>/<channel_name>", methods=["GET", "POST"])
 def main_channel(username, channel_name):
-    return render_template("main.html", username = username, channel_name = channel_name)
+    return render_template("main.html", channel_name = channel_name)
 
+@app.route("/channel-list", methods = ["POST"])
+def channels():
+    print(*channel_list, sep='\n')
+    return jsonify({
+        "list":channel_list
+    })
 
 if __name__ == '__main__':
     app.run(debug=True)

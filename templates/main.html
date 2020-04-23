@@ -1,36 +1,38 @@
 {% extends "layout.html" %}
-
 {% block content %}
 <div class="content">
-    <fieldset id="text">
-        <legend>{{ channel_name}}}</legend>
-        <div class="all-messages">
-            <div id="messages-div">
-                <p>Message1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, at aliquid cupiditate quos ratione nemo nihil corporis inventore hic minus, repudiandae labore qui, facere odio eum minima ipsam reiciendis ut?</p>
-                <span>12:00</span>
-                <span>-Habiba</span>
+    {% if channel_name %}
+        <fieldset id="text">
+            <legend>{{ channel_name }}</legend>
+            <div class="all-messages">
+                <div id="messages-div">
+                    <p>Message1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, at aliquid cupiditate quos ratione nemo nihil corporis inventore hic minus, repudiandae labore qui, facere odio eum minima ipsam reiciendis ut?</p>
+                    <span>12:00</span>
+                    <span>-Habiba</span>
+                </div>
+                <div id="messages-div">
+                    <p>Message2</p>
+                    <span>13:00</span>
+                    <span>-Aliya</span>
+                </div>
+                <div id="messages-div">
+                    <p>Message3 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia exercitationem quod sapiente itaque necessitatibus. Eum placeat aut ullam totam sint aliquid earum, aspernatur omnis. Vitae nulla ratione nisi velit praesentium? </p>
+                    <span>14:00</span>
+                    <span>-Naeem</span>
+                </div>
+                <div id="messages-div">
+                    <p>Message3</p>
+                    <span>14:00</span>
+                    <span>-Naeem</span>
+                </div>
             </div>
-            <div id="messages-div">
-                <p>Message2</p>
-                <span>13:00</span>
-                <span>-Aliya</span>
+            <div id="send-message-div">
+                <input type="text" id="message">
+                <button type="button">Send</button>
             </div>
-            <div id="messages-div">
-                <p>Message3 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia exercitationem quod sapiente itaque necessitatibus. Eum placeat aut ullam totam sint aliquid earum, aspernatur omnis. Vitae nulla ratione nisi velit praesentium? </p>
-                <span>14:00</span>
-                <span>-Naeem</span>
-            </div>
-            <div id="messages-div">
-                <p>Message3</p>
-                <span>14:00</span>
-                <span>-Naeem</span>
-            </div>
-        </div>
-        <div id="send-message-div">
-            <input type="text" id="message">
-            <button type="button">Send</button>
-        </div>
-    </fieldset>
-    <h1 id="heading">Hi, {{ username }}! Please join or create a new channel!</h1>
+        </fieldset>
+    {% else %}
+        <h1 id="heading">Hi, {{ username }}! Please join or create a new channel!</h1>
+    {% endif %}
 </div>
-{% endblock%}
+{% endblock %}

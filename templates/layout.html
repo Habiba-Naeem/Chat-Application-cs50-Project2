@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="../static/style.css">
-        <link rel="stylesheet" href="../static/sass.css">
-        <script  typpe="text/javascript" src="/static/script.js"></script>
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+        <link rel="stylesheet" type="text/css" href="/static/sass.css">
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+        <script  typpe="text/javascript" src="/static/javascript/script.js"></script>
         <title>Flack</title>
     </head>
     <body>
         <div class="wrapper">
             <nav class="nav-left" id="nav-left">
-                <div class="info">
-                    <h1>Flack</h1>
-                </div>
+                <h1>Flack</h1>
                 <h3>{{ username }}</h3>
                 <button type="button" class="nav-button" id="friend-list" >Friends</button>
                 <div class="info">
@@ -20,17 +19,18 @@
                     </ul>
                 </div>
                 <button type="button" class="nav-button" id="channel-list">Channel List</button>
-                <div class="info">
-                    <ul>
-                        <li> <a href="">Channel 1</a></li>
+                <div class="info" id="channel-list-div">
+                    <ul id="channel-list-ul">
                     </ul>
                 </div>
-                <button type="button" class="nav-button" id="create-channel">Create Channel</button>
-                <div class="info">
-                    <input type="text" autocomplete="off" placeholder="Channel name" name="channel-name" id="channel_input">
+
+                <button type="button" class="nav-button" id="create-channel-button">Create Channel</button>
+                <div class="info" id="create-channel-div">
+                    <input type="text" autocomplete="off" placeholder="Channel name" name="channel-name" id="channel-input">
                     <button type="button" id="create">Create</button>
                 </div>
-                <div class="info">
+
+                <div class="info-logout">
                     <button type="button" id="logout"  onclick="window.location.replace('/logout')">Log Out</button>
                 </div>
             </nav>

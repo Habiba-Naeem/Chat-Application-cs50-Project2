@@ -60,28 +60,27 @@ $font:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
        color: inherit;
        display: block;
     }
+    .info{
+        display: none;
+    }
     .nav-button, #logout
     {   font-family: $font;
         padding: 1%;
         border:none;
         font-size: 20px;
+        display: block;
         background-color: transparent;
         &:hover{
             cursor: pointer;
             font-weight: 900;
         }
     }
-    input[type=text]{
-        display: none;
-    }
-    #create{
-        display: none;
-    }
+   
 }
 
 li{
     list-style: none;
-    display: none;
+    
 }
 
 .content{
@@ -102,6 +101,8 @@ li{
     }
     li{
         list-style: none;
+        margin-top: 2%;
+        cursor: pointer;
     }
     .all-messages{
         height: 80vh;

@@ -48,23 +48,21 @@
     text-decoration: inherit;
     color: inherit;
     display: block; }
+  .nav-left .info {
+    display: none; }
   .nav-left .nav-button, .nav-left #logout {
     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     padding: 1%;
     border: none;
     font-size: 20px;
+    display: block;
     background-color: transparent; }
     .nav-left .nav-button:hover, .nav-left #logout:hover {
       cursor: pointer;
       font-weight: 900; }
-  .nav-left input[type=text] {
-    display: none; }
-  .nav-left #create {
-    display: none; }
 
 li {
-  list-style: none;
-  display: none; }
+  list-style: none; }
 
 .content {
   display: inline-block;
@@ -80,7 +78,9 @@ li {
   .content legend {
     font-size: 40px; }
   .content li {
-    list-style: none; }
+    list-style: none;
+    margin-top: 2%;
+    cursor: pointer; }
   .content .all-messages {
     height: 80vh;
     overflow-y: scroll; }
