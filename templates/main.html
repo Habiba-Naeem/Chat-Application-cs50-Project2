@@ -5,8 +5,8 @@
         <fieldset id="text">
             <legend>{{ channel_name }}</legend>
             <div class="all-messages">
-                <div id="messages-div">
-                    <p>Message1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, at aliquid cupiditate quos ratione nemo nihil corporis inventore hic minus, repudiandae labore qui, facere odio eum minima ipsam reiciendis ut?</p>
+                
+                    <!--<p>Message1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, at aliquid cupiditate quos ratione nemo nihil corporis inventore hic minus, repudiandae labore qui, facere odio eum minima ipsam reiciendis ut?</p>
                     <span>12:00</span>
                     <span>-Habiba</span>
                 </div>
@@ -23,12 +23,14 @@
                 <div id="messages-div">
                     <p>Message3</p>
                     <span>14:00</span>
-                    <span>-Naeem</span>
-                </div>
+                    <span>-Naeem</span>-->
+                
             </div>
             <div id="send-message-div">
+                <button type="button" id="emoji">😀</button>
+                <div id="emoji-div"></div>
                 <input type="text" id="message">
-                <button type="button">Send</button>
+                <button type="button" id="send-message">Send</button>
             </div>
         </fieldset>
     {% else %}

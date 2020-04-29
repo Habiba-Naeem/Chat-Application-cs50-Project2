@@ -17,23 +17,25 @@ $font:"Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     }
     input[type=text]
     {   
+        font-family: $font;
         position: static;
         box-sizing: border-box;
         font-size: 20px;
         margin: 5% 0;
         padding: 3%;
         border-radius: 0.2rem;
-        border: solid 1px hsla(0, 95%, 35%, 1);
+        border: solid 1px rgb(255, 218, 117);
     }
     button
     {
+        font-family: $font;
         position: static;
         box-sizing: border-box;
         font-size: 15px;
         margin: 5% 0;
         padding: 3%;
         border-radius: 0.2rem;
-        border: solid 1px hsla(0, 95%, 35%, 1);
+        border: solid 1px rgb(255, 218, 117);
     }
 }
 
@@ -84,7 +86,6 @@ li{
 }
 
 .content{
-
     display: inline-block;
     font-family: $font;
     position: fixed;
@@ -95,6 +96,7 @@ li{
         height: 90%;
         border: none;
         display: none;
+        width: 100%;
     }
     legend{
         font-size: 40px;
@@ -107,32 +109,51 @@ li{
     .all-messages{
         height: 80vh;
         overflow-y: scroll;
+        width: 95%;
+        background-color: rgb(225, 243, 243);
     }
-    #messages-div{
+    .messages-div{
         margin: 3%;
         border: solid 1px rgb(152, 218, 203);
         border-left:none;
         border-right:none;
     }
+    p{
+        font-size: 20px;
+    }
     span{
         font-size: 12px;
+        margin-right: 3%;
     }
     #send-message-div{
-        position: fixed;
-        bottom: 5%;
         width: 80%;
     }
     #message{
         font-size: 20px;
+        font-family: $font;
         padding: 1%;
         width: 60%;
         border-radius: 0.2rem;
-        border: solid 1px hsla(0, 95%, 35%, 1);
+        border: solid 1px rgb(255, 218, 117);
     }
     button{
+        font-family: $font;
         font-size: 20px;
         padding: 1%;
         border-radius: 0.2rem;
-        border: solid 1px hsla(0, 95%, 35%, 1);
+        border: solid 1px rgb(255, 218, 117);
+    }
+    #emoji{
+        border: none;
+    }
+    #emoji-div{
+        display: none;
+        position: absolute;
+        bottom: 15%;
+        left: 5%;
+        width: 30%;
+    }
+    #emos{
+        border: none;
     }
 }

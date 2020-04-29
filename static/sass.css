@@ -12,21 +12,23 @@
     font-size: 20px;
     display: block; }
   .display-name input[type=text] {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     position: static;
     box-sizing: border-box;
     font-size: 20px;
     margin: 5% 0;
     padding: 3%;
     border-radius: 0.2rem;
-    border: solid 1px #ae0404; }
+    border: solid 1px #ffda75; }
   .display-name button {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     position: static;
     box-sizing: border-box;
     font-size: 15px;
     margin: 5% 0;
     padding: 3%;
     border-radius: 0.2rem;
-    border: solid 1px #ae0404; }
+    border: solid 1px #ffda75; }
 
 .nav-left {
   background-color: #d6f7f4;
@@ -74,7 +76,8 @@ li {
   .content fieldset {
     height: 90%;
     border: none;
-    display: none; }
+    display: none;
+    width: 100%; }
   .content legend {
     font-size: 40px; }
   .content li {
@@ -83,28 +86,43 @@ li {
     cursor: pointer; }
   .content .all-messages {
     height: 80vh;
-    overflow-y: scroll; }
-  .content #messages-div {
+    overflow-y: scroll;
+    width: 95%;
+    background-color: #e1f3f3; }
+  .content .messages-div {
     margin: 3%;
     border: solid 1px #98dacb;
     border-left: none;
     border-right: none; }
+  .content p {
+    font-size: 20px; }
   .content span {
-    font-size: 12px; }
+    font-size: 12px;
+    margin-right: 3%; }
   .content #send-message-div {
-    position: fixed;
-    bottom: 5%;
     width: 80%; }
   .content #message {
     font-size: 20px;
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     padding: 1%;
     width: 60%;
     border-radius: 0.2rem;
-    border: solid 1px #ae0404; }
+    border: solid 1px #ffda75; }
   .content button {
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;
     font-size: 20px;
     padding: 1%;
     border-radius: 0.2rem;
-    border: solid 1px #ae0404; }
+    border: solid 1px #ffda75; }
+  .content #emoji {
+    border: none; }
+  .content #emoji-div {
+    display: none;
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+    width: 30%; }
+  .content #emos {
+    border: none; }
 
 /*# sourceMappingURL=sass.css.map */
