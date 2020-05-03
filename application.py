@@ -69,7 +69,6 @@ def sign():
             print(*user_list, sep='\n')
             return jsonify({"success":False})
 
-
 #when user has provided a valid display name, then display the main.html
 @app.route("/user/<string:username>")
 def main(username):
@@ -114,7 +113,6 @@ def main_channel(username, channel_name):
     if request.method == "GET":
 
         session["channel_name"] = channel_name
-       
         print(f"Channel name:", session["channel_name"])
         print(f"Userame:", session["username"])
         print("channel list: ")
@@ -167,10 +165,10 @@ def message(data):
     if len(list_of_messages) == 100: 
         del list_of_messages[0]
 
+    print( len(list_of_messages) )
     text_list = {'text_message': emoji, 'username':session["username"], 'channel_name': session["channel_name"], 'time': time}
     
     emit("message", text_list, broadcast=True)
-
 
 if __name__ == '__main__':
     app.run(debug=True)

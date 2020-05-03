@@ -43,7 +43,6 @@ function add_list_items(data, list_div, ul){
     return false;  
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // buttons:
@@ -67,17 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // invisible side bar
     document.querySelector(".nav-left").style.visibility = "hidden";
+
     
     // Connect to websocket
     var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
 
-    
 
-    // if user has logged in then show the side bar
     if(localStorage.getItem("username")){
         document.querySelector(".nav-left").style.visibility = "visible";
-    }
-
+    };
+     
     // user confirms the display name
     if(okay_button){
 
@@ -279,10 +277,11 @@ document.addEventListener('DOMContentLoaded', () => {
     socket.on('connect', () => {
         document.querySelector('#send-message').addEventListener("click", () => {
             const text_message = document.querySelector("#message").value;
-
             socket.emit('send message', {'text_message':text_message});
+            document.querySelector("#message").value = '';
         });
     });
+
 
     // When a new message is announced, add to the unordered list
     socket.on('message', function(data){
